@@ -41,9 +41,26 @@ class Airplane {
 */
 
 class Person {
-
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+    
+  }
+  eat(someFood) {
+    if (this.stomach.length < 10) {
+      this.stomach.push(someFood);
+    }
+  }
+  poop() {
+    if (this.stomach.length == 10) {
+      return this.stomach = [];
+    }
+  }
+  toString() {
+    return `${this.name}, ${this.age}`;
+  }
 }
-
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -58,8 +75,24 @@ class Person {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-class Car {
-
+class Car{
+  constructor(model, milesPerGallon) {
+     this.tank = 0;
+     this.odometer = 0;
+     this.milesPerGallon = 20;
+     this.model = "BatMobile";
+   }
+    fill(){
+     return (this.tank += 10);
+    }
+    drive(){
+      return ((this.odometer += 50)&&(this.tank - 10 ));
+    }
+  noDrive() {
+    if (this.tank === 0) {
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+  }
 }
 
 /*
